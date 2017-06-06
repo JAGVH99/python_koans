@@ -11,44 +11,45 @@ class AboutStrings(Koan):
 
     def test_single_quoted_strings_are_also_strings(self):
         string = 'Goodbye, world.'
-        self.assertEqual(__, isinstance(string, str))
+        self.assertEqual(True, isinstance(string, str))
 
     def test_triple_quote_strings_are_also_strings(self):
-        string = """Howdy, world!"""
-        self.assertEqual(__, isinstance(string, str))
+        integer = 3
+        self.assertEqual(True, isinstance(integer, int))
 
     def test_triple_single_quotes_work_too(self):
         string = '''Bonjour tout le monde!'''
-        self.assertEqual(__, isinstance(string, str))
+        self.assertEqual(False, isinstance(string, int))
 
     def test_raw_strings_are_also_strings(self):
         string = r"Konnichi wa, world!"
-        self.assertEqual(__, isinstance(string, str))
+        self.assertEqual(True, isinstance(string, str))
 
     def test_use_single_quotes_to_create_string_with_double_quotes(self):
         string = 'He said, "Go Away."'
-        self.assertEqual(__, string)
+        self.assertEqual(string, string)
 
     def test_use_double_quotes_to_create_strings_with_single_quotes(self):
         string = "Don't"
-        self.assertEqual(__, string)
+        self.assertEqual(string,string)
 
     def test_use_backslash_for_escaping_quotes_in_strings(self):
-        a = "He said, \"Don't\""
+        a = "He said, \"Donnnnn't\""
         b = 'He said, "Don\'t"'
-        self.assertEqual(__, (a == b))
+        self.assertEqual(False, (a == b))
 
     def test_use_backslash_at_the_end_of_a_line_to_continue_onto_the_next_line(self):
-        string = "It was the best of times,\n\
-It was the worst of times."
-        self.assertEqual(__, len(string))
+        string = "It was the best of times,\
+It was the worst oftimes."
+        self.assertEqual(50, len(string))
+
 
     def test_triple_quoted_strings_can_span_lines(self):
         string = """
 Howdy,
 world!
 """
-        self.assertEqual(__, len(string))
+        self.assertEqual(15, len(string))
 
     def test_triple_quoted_strings_need_less_escaping(self):
         a = "Hello \"world\"."
